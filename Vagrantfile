@@ -4,7 +4,7 @@
 Vagrant.configure("2") do |config|
   # Use Ubuntu 18.04
   config.vm.box = "ubuntu/bionic64"
-  config.disksize.size = '20GB'
+  # config.disksize.size = '20GB'
 
   # Set up network port forwarding
   config.vm.network "forwarded_port", guest: 8001, host: 8001, host_ip: "127.0.0.1"
@@ -57,7 +57,7 @@ Vagrant.configure("2") do |config|
   # Add docker image before IBM Cloud
   ######################################################################
   config.vm.provision "docker" do |d|
-    d.pull_images "ubuntu:latest"
+    d.pull_images "python:3.6-slim"
   end
 
   ######################################################################

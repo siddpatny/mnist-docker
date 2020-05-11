@@ -127,7 +127,7 @@ def main():
         train(args, model, device, train_loader, optimizer, epoch)
         test(args, model, device, test_loader)
 
-    save_model(args, model)
+    torch.save(model.state_dict(), "mnist_cnn.pt")
 
 if __name__ == '__main__':
     main()
